@@ -6,9 +6,12 @@ import API from './Services/API';
 
 function App() {
 
+
+  //await promise, then console log the next day's high and low temperature to the console.
+  //more data is available in the raw data, we can include more if necessary/wanted.
   const testWeatherAPI = API.getWeatherData('38','-104').then(res => {
-    console.log(res.data.daily[0].temp.max);
-    console.log(res.data.daily[0].temp.min);
+    console.log(res.data.daily[0].temp.max + " degrees F high temp");
+    console.log(res.data.daily[0].temp.min + " degrees F low temp");
   });
   
 
