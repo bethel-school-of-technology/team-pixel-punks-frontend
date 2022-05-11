@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+//THIS HAS NOT BEEN CODED YET. NEED ROUTES AND VARIABLES - PATRICK
+
 function App() {
   return (
     <div className="App">
