@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const baseURL = "http://localhost:3001/users"
+
 const API = {
 
   //this function takes in two strings, lattitude and longitude
@@ -14,8 +16,13 @@ const API = {
     return axios.get
     ('http://api.positionstack.com/v1/forward?access_key=3f10f040b0272fd0c5f95ea64844da9e&query=' 
     + zip);
+  },
+  getLocationsById: (id) => {
+    return axios.get(`${baseURL}/${id}`);
+  },
+  createUser: (newUser) => {
+    return axios.post(baseURL + '/sign-up', newUser);
   }
-
 };
 
 export default API;

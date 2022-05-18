@@ -27,6 +27,8 @@ function App() {
     })
   };
 
+
+
   //test code for weather API calls  unsure why the console logs are executing twice each time.
   getWeather(90210);
 
@@ -62,7 +64,7 @@ function App() {
               <Route exact path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/locations/:id" element={<Locations />} />
+              <Route path="/locations/:id" element={<Locations />}  />
 
             </Routes>
           </div>
