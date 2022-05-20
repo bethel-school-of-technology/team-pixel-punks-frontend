@@ -6,7 +6,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Login from './Components/Login'
 import SignUp from './Components/signup.component'
-import Locations from './Components/locations.component';
+import Locations from './Components/Locations';
 
 function App() {
 
@@ -64,7 +64,7 @@ function App() {
               <Route exact path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/locations/:id" element={<Locations />}  />
+              <Route path="/locations" element={<Locations />}  />
 
             </Routes>
           </div>

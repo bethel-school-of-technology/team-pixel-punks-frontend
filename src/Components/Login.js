@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../Services/API';
 
@@ -32,9 +32,10 @@ const Login = () => {
     e.preventDefault();
     console.log("hi")
     API.login(user).then(res => {
-      console.log(res);
+      //console.log(res.data);
+      localStorage.setItem("token", JSON.stringify(res.data));
       // redirect to the locations page
-      navigate('/users/locations');
+      navigate('/locations');
       
       // also store the response to local storage
     })

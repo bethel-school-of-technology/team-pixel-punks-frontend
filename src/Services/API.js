@@ -17,14 +17,18 @@ const API = {
     ('http://api.positionstack.com/v1/forward?access_key=3f10f040b0272fd0c5f95ea64844da9e&query=' 
     + zip);
   },
-  getLocationsById: (id) => {
-    return axios.get(`${baseURL}/${id}`);
-  },
+  //getLocationsById: (id) => {
+  //  return axios.get(`${baseURL}/${id}`);
+  //},
   createUser: (newUser) => {
     return axios.post(baseURL + '/sign-up', newUser);
   },
   login: (user) => {
-    return axios.post(`${baseURL}/login`, user)
+    return axios.post(`${baseURL}/login`, user);
+  },
+  getUser: (id) => {
+    
+    return axios.get(`${baseURL}/locations`);
   }
 };
 
