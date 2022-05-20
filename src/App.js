@@ -8,6 +8,32 @@ import Login from './Components/login.component'
 import SignUp from './Components/signup.component'
 import Locations from './Components/locations.component';
 
+//added by Elise - commenting out - in my test app i had this in my index.js not app.js
+//import ReactDOM from 'react-dom';
+//import frosty from './frosty.svg';
+//import sunny from './sunny.svg';
+//import './index.css';
+//const updateAlert = ( maxTemp, minTemp) => {
+//   if (maxTemp > '75' ) {
+//   return ( <img src = {sunny} className="App-logo" alt = "sunny"></img>);
+//   } else if (minTemp <33) {
+//     return (<img src = {frosty} className="App-logo" alt = "sunny"></img>);
+//   } else {
+//     return ('no alert');
+//   }
+//   };
+
+// ReactDOM.render( updateAlert (
+//     '80',
+//     '60',
+//   ),
+//   document.getElementById('root')
+// );
+
+
+
+
+
 function App() {
 
   //this function first gets the latitude and longitude via API for a passed in zipcode, then sends the location
