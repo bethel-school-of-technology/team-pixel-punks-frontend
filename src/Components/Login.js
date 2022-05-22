@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../Services/API';
 
@@ -9,7 +9,6 @@ const Login = () => {
     email: "",
     password: "",
   });
-
 
   //when there is a change on the inputs of this page
   //match the input name to the user state property that matches
