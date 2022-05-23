@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import API from '../Services/API';
-import axios from 'axios';
+//import API from '../Services/API';
+//import axios from 'axios';
 export default class Locations extends Component {
 
 
