@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import API from '../Services/API';
+import axios from 'axios';
 export default class Locations extends Component {
 
+
     // getCity = "a List of Cities";
+     const Input = ({onchange, onClick, title }) =>
+
 
     render() {
         return (
@@ -9,6 +14,10 @@ export default class Locations extends Component {
             // <h3>This is {this.myCitiesList} </h3>);
             <section id="myCitiesList" className="list-group">
                 <div className="mb-3">
+                    <div className= "input">
+                        <input type= "text" onChange={onChange} />
+                        <button onClick={onClick}>{getCity}</button>
+                        </div>
 
                     <div className="container-lg">
                         <div className="text center">
@@ -31,6 +40,9 @@ export default class Locations extends Component {
 
                 </div >
             </section>
+
+
+           
 
             // <show>
             // Selects the given list item and shows its associated pane. Any other list item that was previously selected becomes unselected and its associated pane is hidden. Returns to the caller before the tab pane has actually been shown (for example, before the shown.bs.tab event occurs).
