@@ -34,17 +34,17 @@ import Locations from './Components/Locations';
 function App() {
   const [allLocations, setAllLocations] = useState([]);
 
-  useEffect(() => {
-    getAllLocations();
-  }, []);
+  // useEffect(() => {
+  //   getAllLocations();
+  // }, []);
 
 
-  const getAllLocations = () => {
-    API.getUserLocations().then(res => {
-      setAllLocations(res.data);
-      console.log(res.data);
-    });
-  };
+  // const getAllLocations = () => {
+  //   API.getUserLocations().then(res => {
+  //     setAllLocations(res.data);
+  //     console.log(res.data);
+  //   });
+  // };
 
   return (
     <Router>

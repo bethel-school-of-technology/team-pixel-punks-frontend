@@ -2,8 +2,23 @@ import React, { useState } from 'react';
 import API from '../Services/API';
 
 
-const Locations = (userLocations) => {
-    
+const Locations = () => {
+    //console.log(localStorage.getItem("token"));
+    const [user, setUser] = useState({
+        email: "",
+        firstName: "",
+        lastName: ""
+      });
+
+      API.getUserLocations().then(res =>{
+          //console.log(res.body);
+        //   setUser.email = res.body.Email
+        //   setUser.firstName = res.body.FirstName
+        //   setUser.lastName = res.body.LastName
+      })
+
+      
+
     //
     //     static data = [
     //   { cityName: "City 1", frostAlert: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-snow" viewBox="0 0 16 16">

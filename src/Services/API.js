@@ -42,8 +42,11 @@ const API = {
   },
   getUserLocations: () => {
     const token = localStorage.getItem("token");
-    //console.log(token);
-     return axios.get(`${baseURL}/locations`);
+    // console.log({"jwt": token});
+    const config = {
+      headers: { Authorization: `Bearer ${token}` }
+  };
+     return axios.get(`${baseURL}/locations`, config);
   }
 };
 
