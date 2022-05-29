@@ -29,14 +29,10 @@ const Login = () => {
   //navigate to the user's list of locations page.
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("hi")
     API.login(user).then(res => {
-      //console.log(res.data);
-      localStorage.setItem("token", JSON.stringify(res.data));
-      // redirect to the locations page
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
       navigate('/locations');
-      
-      // also store the response to local storage
     })
   }
 

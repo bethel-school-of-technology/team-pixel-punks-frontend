@@ -1,6 +1,6 @@
 //import API services
 import API from './Services/API';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -32,6 +32,19 @@ import Locations from './Components/Locations';
 
 
 function App() {
+  const [allLocations, setAllLocations] = useState([]);
+
+  // useEffect(() => {
+  //   getAllLocations();
+  // }, []);
+
+
+  // const getAllLocations = () => {
+  //   API.getUserLocations().then(res => {
+  //     setAllLocations(res.data);
+  //     console.log(res.data);
+  //   });
+  // };
 
   return (
     <Router>
@@ -63,7 +76,7 @@ function App() {
               <Route exact path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/locations/" element={<Locations />} />
+              <Route path="/locations/" element={<Locations userLocations = {allLocations}/>} />
 
             </Routes>
           </div>

@@ -33,20 +33,20 @@ const API = {
       ('http://api.positionstack.com/v1/forward?access_key=3f10f040b0272fd0c5f95ea64844da9e&query='
         + zip);
   },
-  //getLocationsById: (id) => {
-  //  return axios.get(`${baseURL}/${id}`);
-  //},
   createUser: (newUser) => {
     return axios.post(baseURL + '/sign-up', newUser);
     console.log('new user created');
   },
   login: (user) => {
     return axios.post(`${baseURL}/login`, user);
-    console.log('logged in');
   },
-  getUser: (id) => {
-
-    return axios.get(`${baseURL}/locations`);
+  getUserLocations: () => {
+    const token = localStorage.getItem("token");
+    // console.log({"jwt": token});
+    const config = {
+      headers: { Authorization: `Bearer ${token}` }
+  };
+     return axios.get(`${baseURL}/locations`, config);
   }
 };
 
