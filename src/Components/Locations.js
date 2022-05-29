@@ -30,21 +30,23 @@ import API from '../Services/API';
 const Locations = () => {
 
     console.log(localStorage.getItem("token"));
-const [user, setUser] = useState({
-    email: "",
-    firstName: "",
-    lastName: ""
-});
+    const [user, setUser] = useState({
+        email: "",
+        firstName: "",
+        lastName: ""
+    });
 
-// API.getUserLocations().then(res => {
-//     setUser.email = res.body.email
-//     setUser.firstName = res.body.FirstName
-//     setUser.lastName = res.body.LastName
-// })
+    // API.getUserLocations().then(res => {
+    //     setUser.email = res.body.email
+    //     setUser.firstName = res.body.FirstName
+    //     setUser.lastName = res.body.LastName
+    // })
 
-API.getUserLocations();
+    API.getUserLocations().then(res => {
+        console.log(res.data);
+    });
 
-let getCity = "a List of Cities";
+    let getCity = "a List of Cities";
 
 
     return (
