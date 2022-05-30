@@ -33,7 +33,7 @@ const getCity = React.createClass({
     render: function () {
         let getCity = [ 'Dallas', 'Redding', 'San Jose'];
         // json object goes into array
-        let getCityList = getCity.map(function (city) {
+        let getCity = getCity.map(function (city) {
             return <li> { city } </li>;
         })
         return <ul> { getCityList} </ul>
