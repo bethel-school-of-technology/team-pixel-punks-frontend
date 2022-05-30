@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const baseURL = "http://localhost:3001/users"
+let loggedIn = false;
 
 const API = {
 
@@ -38,6 +39,7 @@ const API = {
     console.log('new user created');
   },
   login: (user) => {
+    loggedIn = true;
     return axios.post(`${baseURL}/login`, user);
   },
   getUserLocations: () => {
@@ -46,6 +48,12 @@ const API = {
       headers: { Authorization: `Bearer ${token}` }
   };
      return axios.get(`${baseURL}/locations`, config);
+  },
+  logout: () => {
+    loggedIn = false;
+    localStorage.setItem("token", "");
+    alert('logout successful');
+    return axios.get(`${baseURL}/logout`);
   }
 };
 

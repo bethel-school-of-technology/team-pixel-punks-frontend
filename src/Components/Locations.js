@@ -1,5 +1,6 @@
 
 import React, { Component, useState, onChange, onClick } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 //import API from '../Services/API';
 //import axios from 'axios';
 import API from '../Services/API';
@@ -28,6 +29,12 @@ import API from '../Services/API';
 
 
 const Locations = () => {
+    const navigate = useNavigate;
+
+    if (localStorage.getItem("token") == "") {
+        alert("must be logged in");
+        //navigate("/login");
+    }
 
     console.log(localStorage.getItem("token"));
     const [user, setUser] = useState({
