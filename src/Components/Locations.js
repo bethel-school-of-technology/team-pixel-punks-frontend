@@ -32,7 +32,9 @@ const Locations = () => {
                         {locations.map((location, idx) => {
                             return (
                                 <div key={idx}>
-                                    <li>{location.Zipcode}</li>
+                                    <ul className="list-group">
+                                        <li className="list-group-item">{location.Zipcode}</li>
+                                    </ul>
                                 </div>
                             )
                         })}
