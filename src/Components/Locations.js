@@ -36,14 +36,16 @@ const Locations = () => {
     }, []);
 
     let [newLocation, setNewLocation] = useState({
-        zipcode: "",
-        userId: 1  //still need to be able to set newLocation's userID to user.UserId.
+        zipcode: ""
+        //userId added with object send to API route rather than in this state.
+        //couldn't figure out how to set the current user's id in this state.
     })
 
     const handleSubmit = (event) => {
+        
         event.preventDefault();
-        console.log(newLocation);
-        //API.addLocation(newLocation);
+        
+        API.addLocation({userId: user.UserId, zipcode: newLocation.zipcode});
     }
 
     const handleChange = (event) => {
