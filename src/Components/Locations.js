@@ -13,8 +13,7 @@ const Locations = () => {
         API.getUserLocations()
             .then(res => {
                 setUser(res.data.user);
-                console.log(res.data.locations);
-                // console.log(locations);
+                setLocations(res.data.locations);
             });
     }, []);
 
@@ -30,18 +29,16 @@ const Locations = () => {
                     <div className="text center">
                         <h2>{user.FirstName} {user.LastName}'s Locations</h2>
                         <p className="tagLine">Here is a list of your chosen cities.</p>
-                        {locations.map((l, i) => {
-                            <div key={l.LocationId}>
-                                <h3>l.Zipcode</h3>
-                            </div>
+                        {locations.map((location, idx) => {
+                            return (
+                            <li key={idx}>{location.Zipcode}</li>
+                            )
                         })}
                     </div>
                 </div>
             </div>
         </section>
-
-    );
-
+    )
 };
 
 export default Locations;
