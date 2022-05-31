@@ -23,10 +23,10 @@ import API from '../Services/API';
 // ]å
 
 
-const Locations = (handleDelete) => {
+const Locations = () => {
     const [user, setUser] = useState([]);
     const [locations, setLocations] = useState([]);
-
+    
     useEffect(() => {
         API.getUserLocations()
             .then(res => {
@@ -35,13 +35,38 @@ const Locations = (handleDelete) => {
             });
     }, []);
 
+    let [newLocation, setNewLocation] = useState({
+        zipcode: "",
+        userId: 1  //still need to be able to set newLocation's userID to user.UserId.
+    })
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(newLocation);
+        //API.addLocation(newLocation);
+    }
+
+    const handleChange = (event) => {
+        setNewLocation((preValue) => {
+            return { ...preValue, [event.target.name]: event.target.value }
+        });
+        //setNewLocation({userId: user.UserId});
+    }
+
     return (
         <section id="myCitiesList" className="list-group">
             <div className="mb-3">
-                <div className="input">
-                    <input type="text" />
-                    <button >Add Location</button>
-                </div>
+                <form className="input" onSubmit={handleSubmit}>
+                    <input
+                        onChange={handleChange}
+                        type="text"
+                        className="form-control"
+                        placeholder="90210"
+                        name="zipcode"
+                        value={newLocation.zipcode}
+                    />
+                    <button >Add Location by Zipcode</button>
+                </form>
 
                 <div className="container-lg">
                     <div className="text center">

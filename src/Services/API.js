@@ -55,8 +55,10 @@ const API = {
     return axios.get(`${baseURL}/logout`);
   },
   deleteLocation: (id) => {
-    
     axios.post(`${baseURL}/delete-location`, {id: id});
+  },
+  addLocation: (data) => {
+    axios.post(`${baseURL}/add-location`, data);
   }
 };
 
