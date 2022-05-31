@@ -35,7 +35,6 @@ const API = {
   },
   createUser: (newUser) => {
     return axios.post(baseURL + '/sign-up', newUser);
-    console.log('new user created');
   },
   login: (user) => {
     return axios.post(`${baseURL}/login`, user);

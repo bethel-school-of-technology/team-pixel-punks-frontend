@@ -33,18 +33,16 @@ import Locations from './Components/Locations';
 
 function App() {
   const [allLocations, setAllLocations] = useState([]);
+  const [user, setUser] = useState([]);
 
-  // useEffect(() => {
-  //   getAllLocations();
-  // }, []);
-
-
-  // const getAllLocations = () => {
-  //   API.getUserLocations().then(res => {
-  //     setAllLocations(res.data);
-  //     console.log(res.data);
-  //   });
-  // };
+  const setUserData = () => {
+    API.getUserLocations().then(res => {
+        setUser(res.data.user);
+        setAllLocations(res.data.locations);
+        console.log(user);
+        console.log(allLocations);
+    })
+  };
 
   return (
     <Router>
@@ -76,7 +74,7 @@ function App() {
               <Route exact path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/locations/" element={<Locations userLocations = {allLocations}/>} />
+              <Route path="/locations/" element={<Locations user={user} allLocations={allLocations} />} />
 
             </Routes>
           </div>
