@@ -32,10 +32,10 @@ const Login = () => {
     API.login(user).then(res => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
+      //setUserData;
       navigate('/locations');
     })
   }
-
 
   return (
     <form onSubmit={handleSubmit}>

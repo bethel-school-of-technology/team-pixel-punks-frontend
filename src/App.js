@@ -31,20 +31,7 @@ import Locations from './Components/Locations';
 // );
 
 
-function App() {
-  const [allLocations, setAllLocations] = useState([]);
-
-  // useEffect(() => {
-  //   getAllLocations();
-  // }, []);
-
-
-  // const getAllLocations = () => {
-  //   API.getUserLocations().then(res => {
-  //     setAllLocations(res.data);
-  //     console.log(res.data);
-  //   });
-  // };
+function App() {  
 
   return (
     <Router>
@@ -66,11 +53,6 @@ function App() {
                     Sign up
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to={'/login'} onClick={API.logout}>
-                    logout
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
@@ -81,7 +63,7 @@ function App() {
               <Route exact path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/locations/" element={<Locations />} />
+              <Route path="/locations/" element={<Locations  />} />
 
             </Routes>
           </div>
