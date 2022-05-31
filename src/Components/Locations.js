@@ -31,7 +31,9 @@ const Locations = () => {
                         <p className="tagLine">Here is a list of your chosen cities.</p>
                         {locations.map((location, idx) => {
                             return (
-                            <li key={idx}>{location.Zipcode}</li>
+                                <div key={idx}>
+                                    <li>{location.Zipcode}</li>
+                                </div>
                             )
                         })}
                     </div>
