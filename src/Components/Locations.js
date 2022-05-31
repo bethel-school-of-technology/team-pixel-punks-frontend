@@ -23,7 +23,7 @@ import API from '../Services/API';
 // ]å
 
 
-const Locations = () => {
+const Locations = (handleDelete) => {
     const [user, setUser] = useState([]);
     const [locations, setLocations] = useState([]);
 
@@ -52,6 +52,7 @@ const Locations = () => {
                                 <div key={idx}>
                                     <ul className="list-group">
                                         <li className="list-group-item">{location.Zipcode}</li>
+                                        <button className="btn btn-primary" onClick={() => API.deleteLocation(location.LocationId)}>Delete Location</button>
                                     </ul>
                                 </div>
                             )

@@ -33,6 +33,7 @@ import Locations from './Components/Locations';
 
 function App() {  
 
+  
   return (
     <Router>
       <div className="App">
@@ -63,7 +64,7 @@ function App() {
               <Route exact path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/locations/" element={<Locations  />} />
+              <Route path="/locations/" element={<Locations />} />
 
             </Routes>
           </div>

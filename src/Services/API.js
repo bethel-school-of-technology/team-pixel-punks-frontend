@@ -53,6 +53,10 @@ const API = {
     localStorage.setItem("token", "");
     alert('logout successful');
     return axios.get(`${baseURL}/logout`);
+  },
+  deleteLocation: (id) => {
+    
+    axios.post(`${baseURL}/delete-location`, {id: id});
   }
 };
 
