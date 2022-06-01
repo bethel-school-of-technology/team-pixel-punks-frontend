@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+#navLogo {
+  width: 85px;
+  height: 75px;
+  padding-right: 10px;
+
+}
+
