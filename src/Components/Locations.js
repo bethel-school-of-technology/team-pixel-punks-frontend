@@ -33,6 +33,8 @@ const Locations = () => {
                 setUser(res.data.user);
                 setLocations(res.data.locations);
             });
+            //create function to refresh
+            //submit location call same function to refresh
     }, []);
 
     let [newLocation, setNewLocation] = useState({
@@ -46,13 +48,13 @@ const Locations = () => {
         event.preventDefault();
         
         API.addLocation({userId: user.UserId, zipcode: newLocation.zipcode});
+        //call function to refresh
     }
 
     const handleChange = (event) => {
         setNewLocation((preValue) => {
             return { ...preValue, [event.target.name]: event.target.value }
         });
-        //setNewLocation({userId: user.UserId});
     }
 
     return (
