@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Login from './Components/Login';
 import SignUp from './Components/signup.component';
 import Locations from './Components/Locations';
+import Logout from './Components/Logout';
 
 
 
@@ -69,6 +70,11 @@ function App() {
                     Sign up
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to={'/logout'}>
+                    Logout
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -79,6 +85,7 @@ function App() {
               <Route exact path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/logout" element={<Logout />} />
               <Route path="/locations/" element={<Locations />} />
 
             </Routes>
