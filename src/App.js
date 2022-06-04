@@ -44,7 +44,7 @@ function App() {
           <div className="container">
             <Link className="navbar-brand mb-0" to={'/sign-in'}>
               <img className="d-inline-block" id="navLogo"
-              src={require("/Users/patrickruggeri/Documents/GitHub/team-pixel-punks-frontend/src/snow-sun.png" )}/>
+              src={require("./snow-sun.png" )}/>
               Hot and Frosty
             </Link>
             <button type="button" 
