@@ -4,6 +4,10 @@ import { Navigate, useNavigate } from 'react-router-dom';
 // import axios from 'axios';
 import API from '../Services/API';
 
+const currentAlert = (zip) => {
+   return API.updateAlert(90,50);
+}
+
 const Locations = () => {
     const [user, setUser] = useState([]);
     const [locations, setLocations] = useState([]);
@@ -62,7 +66,7 @@ const Locations = () => {
                                 <div key={idx}>
                                     <ul className="list-group">
                                         <li className="list-group-item">{location.Zipcode}</li>
-                                        <li>{API.updateAlert(location.Zipcode)}</li>
+                                        <li>{currentAlert(location.Zipcode)}</li>
                                         <button className="btn btn-primary"
                                             onClick={() => API.deleteLocation(location.LocationId)}>
                                             Delete Location
