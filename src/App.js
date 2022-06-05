@@ -9,15 +9,14 @@ import SignUp from './Components/signup.component';
 import Locations from './Components/Locations';
 import Logout from './Components/Logout';
 
-function App() {  
-
+function App() { 
   
   return (
     <Router>
       <div className="App">
         <nav className="navbar navbar-expand-sm navbar-light fixed-top">
           <div className="container">
-            <Link className="navbar-brand mb-0" to={'/sign-in'}>
+            <Link className="navbar-brand mb-0" to={'/login'}>
               <img className="d-inline-block" id="navLogo"
               src={require("./snow-sun.png" )}/>
               Hot and Frosty

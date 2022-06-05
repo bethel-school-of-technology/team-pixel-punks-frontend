@@ -4,22 +4,20 @@ import { Navigate, useNavigate } from 'react-router-dom';
 // import axios from 'axios';
 import API from '../Services/API';
 
-const currentAlert = (zip) => {
-   return API.updateAlert(90,50);
-}
-
 const Locations = () => {
     const [user, setUser] = useState([]);
     const [locations, setLocations] = useState([]);
-
+      
     useEffect(() => {
         API.getUserLocations()
             .then(res => {
                 setUser(res.data.user);
                 setLocations(res.data.locations);
-            });
+                
+            })
         //create function to refresh
         //submit location call same function to refresh
+        
     }, []);
 
     let [newLocation, setNewLocation] = useState({
@@ -29,9 +27,7 @@ const Locations = () => {
     })
 
     const handleSubmit = (event) => {
-
         event.preventDefault();
-
         API.addLocation({ userId: user.UserId, zipcode: newLocation.zipcode });
         //call function to refresh
     }
@@ -66,7 +62,7 @@ const Locations = () => {
                                 <div key={idx}>
                                     <ul className="list-group">
                                         <li className="list-group-item">{location.Zipcode}</li>
-                                        <li>{currentAlert(location.Zipcode)}</li>
+                                        <li>{API.updateAlert(location.Zipcode)}</li>
                                         <button className="btn btn-primary"
                                             onClick={() => API.deleteLocation(location.LocationId)}>
                                             Delete Location
