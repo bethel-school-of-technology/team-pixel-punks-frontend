@@ -83,7 +83,7 @@ const Locations = () => {
                                 <div key={idx}>
                                     <ul className="list-group">
                                         <li className="list-group-item">{location.Zipcode} - {location.City}</li>
-                                        <Link to={`/update-city/:${location.LocationId}`} >update city Name</Link>
+                                        <Link to={`/update-city/${location.LocationId}`} >update city Name</Link>
                                         <button className="btn btn-primary" onClick={() => API.deleteLocation(location.LocationId)}>Delete Location</button>
                                     </ul>
                                 </div>

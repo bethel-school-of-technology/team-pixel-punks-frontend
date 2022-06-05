@@ -43,7 +43,7 @@ function App() {
       <div className="App">
         <nav className="navbar navbar-expand-sm navbar-light fixed-top">
           <div className="container">
-            <Link className="navbar-brand mb-0" to={'/sign-in'}>
+            <Link className="navbar-brand mb-0" to={'/locations'}>
               <img className="d-inline-block" id="navLogo"
               src={require("./snow-sun.png" )}/>
               Hot and Frosty
