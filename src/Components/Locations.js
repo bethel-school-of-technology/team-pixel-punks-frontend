@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 // import axios from 'axios';
 import API from '../Services/API';
+import UpdateCity from './UpdateCity';
 
 //     static data = [
 //   { cityName: "City 1", frostAlert: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-snow" viewBox="0 0 16 16">
@@ -26,6 +27,7 @@ import API from '../Services/API';
 const Locations = () => {
     const [user, setUser] = useState([]);
     const [locations, setLocations] = useState([]);
+    const navigate = useNavigate;
     
     useEffect(() => {
         API.getUserLocations()
@@ -81,6 +83,7 @@ const Locations = () => {
                                 <div key={idx}>
                                     <ul className="list-group">
                                         <li className="list-group-item">{location.Zipcode} - {location.City}</li>
+                                        <Link to={`/update-city/:${location.LocationId}`} >update city Name</Link>
                                         <button className="btn btn-primary" onClick={() => API.deleteLocation(location.LocationId)}>Delete Location</button>
                                     </ul>
                                 </div>

@@ -8,6 +8,7 @@ import Login from './Components/Login';
 import SignUp from './Components/signup.component';
 import Locations from './Components/Locations';
 import Logout from './Components/Logout';
+import UpdateCity from './Components/UpdateCity';
 
 
 
@@ -87,7 +88,7 @@ function App() {
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/logout" element={<Logout />} />
               <Route path="/locations/" element={<Locations />} />
-
+              <Route path="/update-city/:id" element={<UpdateCity />} />
             </Routes>
           </div>
         </div>
