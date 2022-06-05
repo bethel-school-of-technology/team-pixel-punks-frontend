@@ -80,7 +80,7 @@ const Locations = () => {
                             return (
                                 <div key={idx}>
                                     <ul className="list-group">
-                                        <li className="list-group-item">{location.Zipcode}</li>
+                                        <li className="list-group-item">{location.Zipcode} - {location.City}</li>
                                         <button className="btn btn-primary" onClick={() => API.deleteLocation(location.LocationId)}>Delete Location</button>
                                     </ul>
                                 </div>
