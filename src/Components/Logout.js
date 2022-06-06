@@ -30,7 +30,7 @@ const Logout = () => {
     return(
         <section id="logoutUser" className="logoutUser">
             <nav>
-                <h2>Welcome</h2> 
+                <h2>Logout</h2> 
                 <button onClick=  {this.Logout}>Log Out</button>
             </nav>
             </section>
