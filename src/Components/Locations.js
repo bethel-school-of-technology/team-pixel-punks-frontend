@@ -27,19 +27,16 @@ import UpdateCity from './UpdateCity';
 const Locations = () => {
     const [user, setUser] = useState([]);
     const [locations, setLocations] = useState([]);
-// <<<<<<< styleLocationsPage
-
-// =======
-//     const navigate = useNavigate;
-
+    const navigate = useNavigate;
+    
     useEffect(() => {
         API.getUserLocations()
             .then(res => {
                 setUser(res.data.user);
                 setLocations(res.data.locations);
             });
-        //create function to refresh
-        //submit location call same function to refresh
+            //create function to refresh
+            //submit location call same function to refresh
     }, []);
 
     let [newLocation, setNewLocation] = useState({
@@ -49,10 +46,10 @@ const Locations = () => {
     })
 
     const handleSubmit = (event) => {
-
+        
         event.preventDefault();
-
-        API.addLocation({ userId: user.UserId, zipcode: newLocation.zipcode });
+        
+        API.addLocation({userId: user.UserId, zipcode: newLocation.zipcode});
         //call function to refresh
     }
 
@@ -64,41 +61,23 @@ const Locations = () => {
 
     return (
         <section id="myCitiesList" className="list-group">
-            <div className="text-center">
-                <div id="locationsUserTitle" className="p-2 bg-primary bg-opacity-10 border border-black border-opacity-0 border-5 rounded-3">
-                    <h2>{user.FirstName} {user.LastName}'s Locations</h2>
-                </div>
-            </div>
             <div className="mb-3">
-
+                <form className="input" onSubmit={handleSubmit}>
+                    <input
+                        onChange={handleChange}
+                        type="text"
+                        className="form-control"
+                        placeholder="90210"
+                        name="zipcode"
+                        value={newLocation.zipcode}
+                    />
+                    <button >Add Location by Zipcode</button>
+                </form>
 
                 <div className="container-lg">
-                    <div className="text-center">
-
-                        <div className="fw-bold">
-                            <p className="tagLine">Your chosen cities</p>
-                        </div>
-
-                        <div className="p-2 bg-primary bg-opacity-10 border  border-opacity-5 border-5 rounded-3">
-                        <div className='text-center'>
-                            <h5>Add a city to your list below:</h5>
-                        </div>
-                        <form className="input" onSubmit={handleSubmit}>
-                            <input
-                                onChange={handleChange}
-                                type="text"
-                                className="form-control"
-                                placeholder="90210"
-                                name="zipcode"
-                                value={newLocation.zipcode}
-                            />
-                            <button >Add Location by Zipcode</button>
-                        </form>
-                        </div>
-                        <br></br>
-                        <br></br>
-                        <div className="p-2 bg-primary bg-opacity-10 border border-black border-opacity-0 border-5 rounded-3">
-                        <h5>Delete a city from your list below:</h5>
+                    <div className="text center">
+                        <h2>{user.FirstName} {user.LastName}'s Locations</h2>
+                        <p className="tagLine">Here is a list of your chosen cities.</p>
                         {locations.map((location, idx) => {
                             return (
                                 <div key={idx}>
@@ -110,7 +89,6 @@ const Locations = () => {
                                 </div>
                             )
                         })}
-                        </div>
                     </div>
                 </div>
             </div>

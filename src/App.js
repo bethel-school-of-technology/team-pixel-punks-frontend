@@ -42,9 +42,8 @@ function App() {
     <Router>
       <div className="App">
         <nav className="navbar navbar-expand-sm navbar-light fixed-top">
-
-            <Link className="navbar-brand mb-0" to={'/login'}>
-
+          <div className="container">
+            <Link className="navbar-brand mb-0" to={'/locations'}>
               <img className="d-inline-block" id="navLogo"
               src={require("./snow-sun.png" )}/>
               Hot and Frosty
