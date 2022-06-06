@@ -8,6 +8,7 @@ import Login from './Components/Login';
 import SignUp from './Components/signup.component';
 import Locations from './Components/Locations';
 import Logout from './Components/Logout';
+import UpdateCity from './Components/UpdateCity';
 
 
 
@@ -41,10 +42,11 @@ function App() {
     <Router>
       <div className="App">
         <nav className="navbar navbar-expand-sm navbar-light fixed-top">
-          <div className="container">
+
             <Link className="navbar-brand mb-0" to={'/login'}>
+
               <img className="d-inline-block" id="navLogo"
-              src={require("/Users/patrickruggeri/Documents/GitHub/team-pixel-punks-frontend/src/snow-sun.png" )}/>
+              src={require("./snow-sun.png" )}/>
               Hot and Frosty
             </Link>
             <button type="button" 
@@ -87,7 +89,7 @@ function App() {
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/logout" element={<Logout />} />
               <Route path="/locations/" element={<Locations />} />
-
+              <Route path="/update-city/:id" element={<UpdateCity />} />
             </Routes>
           </div>
         </div>
