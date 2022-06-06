@@ -1,9 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 //import { useNavigate } from 'react-router-dom';
-import API from '../Services/API';
+//import API from '../Services/API';
+//import {confirmAlert} from 'react-confirm-alert';
 
 
 const Logout = () => {
+    // confirmAlert({
+    //     title: "Confirm to submit",
+    //     message: "Are you sure?",
+    //     buttons: [
+    //         {
+    //             label: "Yes",
+    //             OnClick: () => alert('Click Yes')
+    //         },
+    //         {
+    //             label: "No",
+    //             onClick: () => alert('Click No')
+    //         }
+    //     ]
+    // })
     localStorage.clear("user");
     window.location.href = "/login";
 
@@ -15,8 +30,8 @@ const Logout = () => {
     return(
         <section id="logoutUser" className="logoutUser">
             <nav>
-                <h2>Welcome</h2> 
-                <button onClick= {this.Logout}>Log Out</button>
+                <h2>Logout</h2> 
+                <button onClick=  {this.Logout}>Log Out</button>
             </nav>
             </section>
 
