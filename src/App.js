@@ -44,8 +44,8 @@ function App() {
         <nav className="navbar navbar-expand-sm navbar-light fixed-top">
          <Link className="navbar-brand mb-0" to={'/login'}>
               <img className="d-inline-block" id="navLogo">
-              src={require("./snow-sun.png" )} </img>
-              Hot and Frosty
+               </img>
+              
             </Link>
             <button type="button" 
             data-bs-toggle="collapse" 
