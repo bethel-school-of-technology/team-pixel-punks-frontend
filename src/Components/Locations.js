@@ -50,45 +50,6 @@ const Locations = () => {
     });
   };
 
-  // <<<<<<< refresh
-  //   return (
-  //     <section id="myCitiesList" className="list-group">
-  //       <div className="mb-3">
-  //         <form className="input" onSubmit={handleSubmit}>
-  //           <input
-  //             onChange={handleChange}
-  //             type="text"
-  //             className="form-control"
-  //             placeholder="90210"
-  //             name="zipcode"
-  //             value={newLocation.zipcode}
-  //           />
-  //           <button>Add Location by Zipcode</button>
-  //         </form>
-
-  //         <div className="container-lg">
-  //           <div className="text center">
-  //             <h2>
-  //               {user.FirstName} {user.LastName}'s Locations
-  //             </h2>
-  //             <p className="tagLine">Here is a list of your chosen cities.</p>
-  //             {locations.map((location, idx) => {
-  //               return (
-  //                 <div key={idx}>
-  //                   <ul className="list-group">
-  //                     <li className="list-group-item">{location.Zipcode}</li>
-  //                     <button
-  //                       className="btn btn-primary"
-  //                       onClick={() =>
-  //                         API.deleteLocation(location.LocationId).then((res) => {
-  //                           refreshLocations();
-  //                         })
-  //                       }
-  //                     >
-  //                       Delete Location
-  //                     </button>
-  //                   </ul>
-  // =======
   return (
     <section id="myCitiesList" className="list-group">
       <div className="text-center">
