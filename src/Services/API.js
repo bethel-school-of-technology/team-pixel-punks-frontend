@@ -1,7 +1,9 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const baseURL = "http://localhost:3001/users"
 let loggedIn = false;
+//const navigate = useNavigate;
 
 const API = {
 
@@ -58,7 +60,17 @@ const API = {
     return axios.post(`${baseURL}/delete-location`, {id: id});
   },
   addLocation: (data) => {
+
     return axios.post(`${baseURL}/add-location`, data);
+
+   
+  },
+  updateCity: (data) => {
+    return axios.put(`${baseURL}/update-city`, data)
+    // .then(res => {
+    //   // navigate("/locations/");
+    //   return res.send('updated');
+    // });
   }
 };
 
