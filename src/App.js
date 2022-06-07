@@ -76,9 +76,10 @@ function App() {
               </ul>
             </div>
         </nav>
+
         </div>
         <div className="auth-wrapper">
-          <div className="auth-inner">
+        <div className="auth-inner">
             <Routes>
               <Route exact path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
@@ -88,10 +89,9 @@ function App() {
               <Route path="/update-city/:id" element={<UpdateCity />} />
             </Routes>
           </div>
-        </div>
 
-    </Router >
-  
+    </Router>
+
   )
 }
 export default App;
