@@ -79,10 +79,11 @@ function App() {
                 </li>
               </ul>
             </div>
-          </div>
         </nav>
+        
+        </div>
         <div className="auth-wrapper">
-          <div className="auth-inner">
+        <div className="auth-inner">
             <Routes>
               <Route exact path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
@@ -93,7 +94,6 @@ function App() {
             </Routes>
           </div>
         </div>
-      </div>
     </Router>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import API from '../Services/API';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const UpdateCity = () => {
   let  id  = useParams();
@@ -10,17 +10,20 @@ const UpdateCity = () => {
     locationId: id
   });
   
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
         
         event.preventDefault();
         API.updateCity(newCity);
+        navigate('/locations');
     }
 
     const handleChange = (event) => {
       const { value } = event.target
       setNewCity({...newCity, city: value})
   }
-
+  
   return (
     <div>
       <form className="input" onSubmit={handleSubmit}>
