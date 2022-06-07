@@ -15,11 +15,11 @@ const Locations = () => {
       setUser(res.data.user);
       setLocations(res.data.locations);
     });
-    //create function to refresh
-    //submit location call same function to refresh
   }, []);
+
   function refreshLocations() {
     API.getUserLocations().then((res) => {
+      console.log("refreshed")
       setUser(res.data.user);
       setLocations(res.data.locations);
     });
@@ -93,19 +93,22 @@ const Locations = () => {
                     <ul className="list-group">
                       <li className="list-group-item">{location.Zipcode} - {location.City}</li>
                       <Link to={`/update-city/${location.LocationId}`} >update city Name</Link>
-                      <button className="btn btn-primary" onClick={() => API.deleteLocation(location.LocationId)}>Delete Location</button>
+                      <button
+                        className="btn btn-primary"
+                        onClick={() => {
+                          API.deleteLocation(location.LocationId).then(() => {
+                            refreshLocations();
+                          })()}}>
+                        Delete Location
+                      </button>
                     </ul>
                   </div>
                 )
               })}
             </div>
           </div>
-
         </div>
-
       </div>
-    
-      
     </section >
   );
 };

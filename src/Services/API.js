@@ -62,15 +62,9 @@ const API = {
   addLocation: (data) => {
 
     return axios.post(`${baseURL}/add-location`, data);
-
-   
   },
   updateCity: (data) => {
     return axios.put(`${baseURL}/update-city`, data)
-    // .then(res => {
-    //   // navigate("/locations/");
-    //   return res.send('updated');
-    // });
   }
 };
 
