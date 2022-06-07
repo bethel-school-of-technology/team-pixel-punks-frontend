@@ -57,13 +57,16 @@ const API = {
     return axios.get(`${baseURL}/logout`);
   },
   deleteLocation: (id) => {
-    axios.post(`${baseURL}/delete-location`, {id: id});
+    return axios.post(`${baseURL}/delete-location`, {id: id});
   },
   addLocation: (data) => {
-    axios.post(`${baseURL}/add-location`, data);
+
+    return axios.post(`${baseURL}/add-location`, data);
+
+   
   },
   updateCity: (data) => {
-    axios.put(`${baseURL}/update-city`, data)
+    return axios.put(`${baseURL}/update-city`, data)
     // .then(res => {
     //   // navigate("/locations/");
     //   return res.send('updated');

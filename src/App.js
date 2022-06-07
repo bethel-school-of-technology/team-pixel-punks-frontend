@@ -1,5 +1,5 @@
 //import API services
-import API from './Services/API';
+//import API from './Services/API';
 import React, { useState, useEffect } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -35,19 +35,17 @@ import UpdateCity from './Components/UpdateCity';
 // );
 
 
-function App() {  
+function App() {
 
-  
+
   return (
     <Router>
       <div className="App">
         <nav className="navbar navbar-expand-sm navbar-light fixed-top">
-
-            <Link className="navbar-brand mb-0" to={'/login'}>
-
-              <img className="d-inline-block" id="navLogo"
-              src={require("./snow-sun.png" )}/>
-              Hot and Frosty
+         <Link className="navbar-brand mb-0" to={'/login'}>
+              <img className="d-inline-block" id="navLogo">
+               </img>
+              
             </Link>
             <button type="button" 
             data-bs-toggle="collapse" 
@@ -56,9 +54,7 @@ function App() {
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation">
-
-              <span className="navbar-toggler-icon"></span>
-            
+              <span className="navbar-toggler-icon"></span>           
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ml-auto">
@@ -80,7 +76,7 @@ function App() {
               </ul>
             </div>
         </nav>
-        
+
         </div>
         <div className="auth-wrapper">
         <div className="auth-inner">
@@ -93,8 +89,9 @@ function App() {
               <Route path="/update-city/:id" element={<UpdateCity />} />
             </Routes>
           </div>
-        </div>
+
     </Router>
+
   )
 }
-export default App
+export default App;
