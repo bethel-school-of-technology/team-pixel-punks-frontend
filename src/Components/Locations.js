@@ -105,7 +105,7 @@ const Locations = () => {
                   {location.Alert}
                   <Link to={`/update-city/${location.LocationId}`} >update city Name</Link>
                   <button
-                    className="btn btn-primary"
+                    className="btn btn-danger"
                     onClick={() =>
                       API.deleteLocation(location.LocationId)}>
                     Delete Location
