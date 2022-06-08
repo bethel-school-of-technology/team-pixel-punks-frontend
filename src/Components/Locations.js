@@ -39,7 +39,9 @@ const Locations = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    API.addLocation({ userId: user.UserId, zipcode: newLocation.zipcode });
+    API.addLocation({ userId: user.UserId, zipcode: newLocation.zipcode }).then(response => {
+      refreshLocations();
+    });
     //call function to refresh
   };
 
@@ -80,7 +82,8 @@ const Locations = () => {
                   name="zipcode"
                   value={newLocation.zipcode}
                 />
-                <button >Add Location by Zipcode</button>
+                <br></br>
+                <button className="btn btn-primary" >Add Location by Zipcode</button>
               </form>
             </div>
             <br></br>
@@ -95,10 +98,11 @@ const Locations = () => {
                       <Link to={`/update-city/${location.LocationId}`} >update city Name</Link>
                       <button
                         className="btn btn-primary"
-                        onClick={() => {
-                          API.deleteLocation(location.LocationId).then(() => {
+                        onClick={() => 
+                          API.deleteLocation(location.LocationId).then((response) => {
+                            console.log(response);
                             refreshLocations();
-                          })()}}>
+                          }) }>
                         Delete Location
                       </button>
                     </ul>
