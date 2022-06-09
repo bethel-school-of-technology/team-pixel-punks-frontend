@@ -27,7 +27,7 @@ const SignUp = () => {
     event.preventDefault();
     console.log('submit occurred');
     API.createUser(newUser).then(res => {
-      res.status(200).send('user successfully created');
+      window.alert('user added');
       navigate('/login');
     })
   }

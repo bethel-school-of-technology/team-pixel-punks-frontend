@@ -1,5 +1,3 @@
-//import API services
-//import API from './Services/API';
 import React, { useState, useEffect } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -10,9 +8,7 @@ import Locations from './Components/Locations';
 import Logout from './Components/Logout';
 import UpdateCity from './Components/UpdateCity';
 
-
 function App() {
-
 
   return (
     <Router>
