@@ -7,9 +7,9 @@ const API = {
 
   //this function takes in a zipcode, calls an API that returns the latitude and longitude
   getLatLong: (zip) => {
-     return axios.get
+    return axios.get
       ('http://api.positionstack.com/v1/forward?access_key=3f10f040b0272fd0c5f95ea64844da9e&query='
-        + zip);
+        + zip );
   },
   //this function takes in two strings, lattitude and longitude
   //and returns the JSON object from the weather API
@@ -19,7 +19,7 @@ const API = {
       + '&lon=' + long
       + '&exclude=hourly,minutely,alerts&units=imperial&appid=58d0361f438e67f6c23c40e7d62a5c84');
   },
-  
+
   createUser: (newUser) => {
     return axios.post(baseURL + '/sign-up', newUser);
   },
@@ -45,11 +45,19 @@ const API = {
   },
   addLocation: (data) => {
     API.getLatLong(data.zipcode).then(res => {
-      data.latitude = (res.data.data[0].latitude.toString());
-      data.longitude = (res.data.data[0].longitude.toString());
-      return axios.post(`${baseURL}/add-location`, data);
+      if (res.status == 200) {
+        console.log(res);
+        data.latitude = (res.data.data[0].latitude.toString());
+        data.longitude = (res.data.data[0].longitude.toString());
+        window.alert("location added!")
+        return axios.post(`${baseURL}/add-location`, data);
+      } else {
+        window.alert("there was an issue");
+        return;
+      }
+      
     })
-    
+
   },
   updateCity: (data) => {
     return axios.put(`${baseURL}/update-city`, data)
