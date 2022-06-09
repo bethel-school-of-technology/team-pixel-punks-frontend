@@ -68,6 +68,9 @@ body, html,  #root {
   color: #167bff;
 }
 
+.custom {
+  width: 200px;
+}
 /* #locationsUserTitle {
   color: #7f7d7d
 } */
