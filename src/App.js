@@ -7,6 +7,7 @@ import SignUp from './Components/signup.component';
 import Locations from './Components/Locations';
 import Logout from './Components/Logout';
 import UpdateCity from './Components/UpdateCity';
+import API from './Services/API';
 
 function App() {
 
@@ -42,7 +43,8 @@ function App() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to={'/logout'}>
+                <Link className="nav-link" to={'/logout'} onClick ={API.logout}>
+                  
                   Logout
                 </Link>
               </li>

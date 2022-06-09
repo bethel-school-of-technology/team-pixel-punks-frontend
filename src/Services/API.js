@@ -37,7 +37,7 @@ const API = {
   logout: () => {
     loggedIn = false;
     localStorage.setItem("token", "");
-    alert('logout successful');
+    window.alert('logout successful');
     return axios.get(`${baseURL}/logout`);
   },
   deleteLocation: (id) => {
