@@ -33,8 +33,8 @@ const Locations = () => {
             completeLocation.Alert = (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="32"
+                height="32"
                 fill="orange"
                 className="bi bi-sun"
                 viewBox="0 0 16 16"
@@ -46,8 +46,8 @@ const Locations = () => {
             completeLocation.Alert = (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="32"
+                height="32"
                 fill="blue"
                 className="bi bi-snow2"
                 viewBox="0 0 16 16"
