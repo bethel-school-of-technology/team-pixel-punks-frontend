@@ -26,16 +26,21 @@ const UpdateCity = () => {
   
   return (
     <div>
+      <h3>Type a City Name in the box below:</h3>
       <form className="input" onSubmit={handleSubmit}>
                     <input
                         onChange={handleChange}
                         type="text"
                         className="form-control"
-                        placeholder="city name here"
+                        placeholder="Input city name here"
                         name="city"
                         value={newCity.City}
                     />
-                    <button >Update City Name</button>
+                    <br></br>
+                    <div className="text-center">
+                    <button  type="button"
+                          className="btn btn-primary btn-block custom">Update City Name</button>
+                          </div>
                 </form>
     </div>
   )
