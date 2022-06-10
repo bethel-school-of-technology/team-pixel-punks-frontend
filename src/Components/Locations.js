@@ -158,7 +158,7 @@ const Locations = () => {
                         </button>
                       </Link>
                       <br></br>
-                      <div class="input-group-append">
+                      <div className="input-group-append">
                       <button
                         type= "button" className="btn btn-danger btn-block custom custom-control-inline"
                         onClick={() =>
