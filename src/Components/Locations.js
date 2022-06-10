@@ -130,7 +130,7 @@ const Locations = () => {
                 />
                 <br></br>
                 <button
-                  type="button"
+                  type="submit"
                   className="btn btn-success btn-block custom"
                 >
                   Add Location
