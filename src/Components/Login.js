@@ -30,11 +30,8 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     API.login(user).then(res => {
-      console.log(res);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
-      //setUserData;
-      
       navigate('/locations');
     })
   }
