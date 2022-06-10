@@ -46,10 +46,10 @@ const API = {
   addLocation: (data) => {
     API.getLatLong(data.zipcode).then(res => {
       if (res.status == 200) {
-        console.log(res);
         data.latitude = (res.data.data[0].latitude.toString());
         data.longitude = (res.data.data[0].longitude.toString());
-        window.alert("location added!")
+        data.city = (res.data.data[0].locality);
+        window.alert(data.city +" added!")
         return axios.post(`${baseURL}/add-location`, data);
       } else {
         window.alert("there was an issue");
