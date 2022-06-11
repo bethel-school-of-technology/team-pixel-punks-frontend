@@ -44,7 +44,7 @@ const API = {
     return axios.post(`${baseURL}/delete-location`, { id: id });
   },
   addLocation: (data) => {
-    API.getLatLong(data.zipcode).then(res => {
+    return API.getLatLong(data.zipcode).then(res => {
       if (res.status == 200) {
         data.latitude = (res.data.data[0].latitude.toString());
         data.longitude = (res.data.data[0].longitude.toString());
